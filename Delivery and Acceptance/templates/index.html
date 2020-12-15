@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <style>
+body {
+  background-image: linear-gradient(to right,#aa4b6b,#6b6b83,#3b8d99);
+}
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.textbox { 
+    background: white; 
+    border: 1px solid #ffa853; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px 3px #ffa853; 
+    color: #666; 
+    outline: none; 
+    height:23px; 
+    width: 275px; 
+  } 
+</style>
+
+  <meta charset="UTF-8">
+      <title>ML API</title>
+          <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+    </head>
+    
+
+<body>
+  
+ <div class="login" align=center>
+    <h1>Predict Weekly Sales</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <br/><br/><br/><br/>
+        Is it a holiday?     <input class="textbox" type="text" name="Is it a holiday" placeholder="1 for YES, 0 for NO" required="required" /><br/><br/>
+        Input Markdown1 <input class="textbox" type="text" name="Markdown1" placeholder="Enter a number between 0 and 15" required="required" wrap=soft/><br/><br/>
+Input Markdown2    <input class="textbox" type="text" name="Markdown2" placeholder="Enter a number between 0 and 15" required="required" /><br/><br/>
+Input Markdown3    <input class="textbox" type="text" name="Markdown3" placeholder="Enter a number between 0 and 15" required="required" /><br/><br/>
+Input Markdown4     <input class="textbox" type="text" name="Markdown4" placeholder="Enter a number between 0 and 15" required="required" /><br/><br/>
+Input Markdown5     <input class="textbox" type="text" name="Markdown5" placeholder="Enter a number between 0 and 15" required="required" /><br/><br/>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+<br>
+   <br>
+{{ prediction_value }}
+
+ </div>
+
+
+</body>
+</html>

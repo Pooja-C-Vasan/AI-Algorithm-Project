@@ -19,3 +19,4 @@ statsmodels==0.11.0
 sweetviz==1.0b6
 Werkzeug==1.0.0
 zipp==2.2.0
+gunicorn==19.9.0
